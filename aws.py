@@ -6,8 +6,8 @@ import time
 import sys
 ec2 = boto3.resource('ec2',region_name='us-east-1')
 
-def create_instnaces():
-    #create instnaces.
+def create_instances():
+    #create instances.
     ec2_instances = ec2.create_instances(ImageId='ami-013be31976ca2c322',MinCount=1,MaxCount=1)
     
 
@@ -25,6 +25,10 @@ def terminate_instances(instances):
     for instance in ec2.instances.filter(InstanceIds=ec2_instances):
         print instance
         instance.terminate()
+
+
+
+
 
 
 
