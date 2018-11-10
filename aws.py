@@ -12,10 +12,12 @@ def create_instances():
     
 
     for instance in ec2_instances:
-        while instance.state != "running":
-            print '...instance is {state}'.format(state=instance.state)
-            sys.stdout.flush()
-            time.sleep(5)
+        print "waiting for instance to finish initialization" 
+        instance.wait_until_running()
+       # while instance.state != "running":
+        #    print '...instance is {state}'.format(state=instance.state)
+        #    sys.stdout.flush()
+       #     time.sleep(5)
     
     return ec2_instances
 
