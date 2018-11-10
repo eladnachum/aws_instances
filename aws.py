@@ -29,7 +29,7 @@ def terminate_instances(instances):
 
 
 
-
+create_instances()
 
 
 
